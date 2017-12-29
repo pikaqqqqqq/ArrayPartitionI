@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * Created by think on 2017/12/25.
  * <p>
@@ -18,9 +16,12 @@ import java.util.Arrays;
 
 
 public class test {
+
+    private static final int Cutoff = 7;
+
     public static void main(String[] args) {
-        int a[] = {1,2,6,7,87,334,43,212,56,-987,344,22,123,1235,667,-533,-2,-343};
-        Arrays.sort(a);
+        int a[] = {1, 2, 6, 7, 87, 334, 43, 212, 56, -987, 344, 22, 123, 1235, 667, -533, -2, -343};
+        QuickSort1(a, 0, a.length - 1);
         int sum = 0;
         for (int i = 0; i < a.length; i++) {
             sum = sum + a[i];
@@ -30,7 +31,7 @@ public class test {
 
     }
 
-    static void QuickSort(int a[], int low, int high) {
+    static void QuickSort1(int a[], int low, int high) {
         int temp;
         int i = low;
         int j = high;
@@ -57,8 +58,8 @@ public class test {
                 System.out.print(a[q] + " ");
             }
             System.out.println(" ");
-            QuickSort(a, 0, i - 1);
-            QuickSort(a, i + 1, high);
+            QuickSort1(a, 0, i - 1);
+            QuickSort1(a, i + 1, high);
 
         }
     }
